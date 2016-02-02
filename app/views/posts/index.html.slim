@@ -1,0 +1,15 @@
+h2 Listing posts
+
+- @posts.each do |post|
+  h1 = post.title
+  p = post.content
+  div 
+    b Author:
+    = post.user.email
+    p
+    = link_to 'Edit', edit_post_path(post), class: 'btn btn-default'
+    = link_to 'Delete', post, data: {:confirm => 'are you sure?'},:method => :delete , class: 'btn btn-warning'
+
+  
+br= link_to 'New Post', new_post_path, class: 'btn btn-default'
+
